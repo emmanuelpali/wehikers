@@ -1,6 +1,6 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">VanHike</a>
+    <a class="navbar-brand" href="/">WeHikers</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -23,15 +23,16 @@
         <li class="nav-item">
           <a class="nav-link" href="/hikes/new">New Hike</a>
         </li>
+        <div class="navbar-nav ml-auto">
+          <% if (!currentUser) { %>
+          <a class="nav-link" href="/login">Login</a>
+          <a class="nav-link" href="/register">Sign Up</a>
+          <% } else { %>
+          <a class="nav-link" href="/logout">Logout</a>
+          <% } %>
+        </div>
       </ul>
     </div>
-    <div class="navbar-nav ml-auto">
-      <% if (!currentUser) { %>
-      <a class="nav-link" href="/login">Login</a>
-      <a class="nav-link" href="/register">Sign Up</a>
-      <% } else { %>
-      <a class="nav-link" href="/logout">Logout</a>
-      <% } %>
-    </div>
+    
   </div>
 </nav>
