@@ -4,8 +4,7 @@
   "description": "An app that allows hikers to post their hiking experiences and review trails",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
