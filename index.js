@@ -23,10 +23,8 @@ const usersRoutes = require("./routes/users");
 //connect to database
 const dbUrl = process.env.MONGO_URL
 const secret = process.env.SECRET || "sess secret";
-mongoose.connect(dbUrl, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.set('strictQuery', true);
+mongoose.connect(dbUrl);
 //shorten code by using the variable db
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "Connection error:"));
