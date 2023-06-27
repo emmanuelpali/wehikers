@@ -30,8 +30,12 @@ module.exports.createHike = async (req, res) => {
     filename: f.filename,
   }));
   newhike.author = req.user._id;
-  await newhike.save();
+  try {
+    await newhike.save();
   req.flash("success", "You have successfully added a new Hike");
+  } catch (error) {
+    console.log('error could not add a hike');
+  }
   res.redirect(`/hikes/${newhike._id}`);
 };
 
