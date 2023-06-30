@@ -1,22 +1,25 @@
 <%- layout('layouts/boilerplate') %>
 <h1>Where We Have Been</h1>
 <a href="/hikes/new">Add a new hike</a>
+<div class="row">
 <% for (let hike of hikes) { %>
-<div class="card shadow mb-3">
+<div class="shadow mb-3 col-md-6">
   <div class="row">
-    <div style="height:40%; width: 400px;" class="col-md-6">
+    <div class="col-md-6 mx-auto">
       <img class="img-fluid" src="<%=hike.images[0].url%>" alt="" />
     </div>
     <div class="col-md-6 mx-auto">
+      <a class="text-decoration-none" href="/hikes/<%=hike._id%>">
       <div class="card-body">
         <h5 class="card-title"><%= hike.title %></h5>
         <p class="card-text"><%= hike.description%></p>
         <p class="card-text">
           <small class="text-muted"><%= hike.location%></small>
         </p>
-        <a class="btn btn-primary" href="/hikes/<%=hike._id%>">View</a>
       </div>
+      </a>
     </div>
   </div>
 </div>
 <% } %>
+</div>

@@ -12,7 +12,7 @@ new mapboxgl.Marker()
   .setLngLat(hikelocation.geometry.coordinates)
   .setPopup(
     new mapboxgl.Popup({ offset: 25 }).setHTML(
-      `<h3>${hikelocation.title}</3><br/><h4>${hikelocation.location}</h4>`
+      `<h3>${hikelocation.title}</3><br/><h5>${hikelocation.location}</h5>`
     )
   )
   .addTo(map);
